@@ -1,0 +1,23 @@
+{
+  "name": "kassino-bot",
+  "version": "0.1.0",
+  "description": "Definitive main bot for all 0's purpouses!",
+  "main": "bot.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node ./build/bot.js"
+  },
+  "dependencies": {
+    "discord.js": "^13.5.0",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.5"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "type": "module",
+  "author": "Martins",
+  "license": "ISC"
+}
