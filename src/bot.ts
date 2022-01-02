@@ -2,8 +2,8 @@
 const token: string = process.env.TOKEN as string;
 
 // import { readFileSync } from "fs";
-import { Client, Intents, Message } from "discord.js";
-
+import { Client, Intents } from "discord.js";
+import { Bot } from "./types/Bot.js"
 // import { REST } from "@discordjs/rest";
 // import { Routes } from "discord-api-types/v9";
 // import { SlashCommandBuilder } from "@discordjs/builders";
@@ -11,25 +11,33 @@ import { Client, Intents, Message } from "discord.js";
 // const rawConfig = readFileSync("./config.json").toString();
 // const { guildIds } = JSON.parse(rawConfig);
 
-const bot: Client = new Client({
-  intents: [
-    Intents.FLAGS.GUILDS,
-    Intents.FLAGS.GUILD_MESSAGES
-  ] 
-});
+import { events } from "./subsystems/eventFileHandler.js";
+import { commands } from "./subsystems/commandFileHandler.js";
 
-import { events , eventLoadLog } from "./subsystems/eventFileHandler.js";
-import { commands, commandLoadLog } from "./subsystems/commandFileHandler.js";
+const bot: Bot = {
+  client: new Client({
+    intents: [
+      Intents.FLAGS.GUILDS,
+      Intents.FLAGS.GUILD_MESSAGES
+    ] 
+  }),
+  events,
+  commands
+}
+
 // console.log(commands,"\n",events);
 
-bot.on("ready", () => events.get("ready")!(bot, [eventLoadLog, commandLoadLog]) );
-bot.on("messageCreate", message => events.get("messageCreate")!(bot, message, commands) );
+for(let event of events.keys()){
+  bot.client.on(event, (...args) => {
+    events.get(event)!(bot, ...args)
+  })
+}
 
 
 try{
-  await bot.login(token);
+  await bot.client.login(token);
 } catch(err){
-  console.error(err);
+  console.error("Não foi possível logar na API discord.js!\n",err);
 }
 
 // bot.on("interactionCreate", interaction => {

@@ -32,5 +32,5 @@ while(queuedDirectories.length > 0){
   }
 }
 
+console.log(commandLoadCheck);
 export const commands = commandsMap;
-export const commandLoadLog = commandLoadCheck;

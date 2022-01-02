@@ -17,5 +17,5 @@ while(eventsDirectory.length > 0){
   eventsMap.set(event, process);
 }
 
+console.log(eventLoadCheck);
 export const events = eventsMap;
-export const eventLoadLog = eventLoadCheck;

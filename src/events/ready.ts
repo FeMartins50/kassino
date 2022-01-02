@@ -1,8 +1,5 @@
-import { Client } from "discord.js";
+import { Bot } from "../types/Bot.js";
 
-export function process(bot: Client, logs: string[]): void {
+export function process(bot: Bot): void {
   console.log("== KASINO IS READY ==");
-  const [ eventLoadLog, commandLoadLog ] = logs;
-  console.log(eventLoadLog);
-  console.log(commandLoadLog);
 }
