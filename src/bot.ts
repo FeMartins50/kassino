@@ -20,10 +20,7 @@ const bot: Client = new Client({
 
 import { events , eventLoadLog } from "./subsystems/eventFileHandler.js";
 import { commands, commandLoadLog } from "./subsystems/commandFileHandler.js";
-// console.log(commands);
-// console.log(events);
-// console.log(eventLoadLog);
-// console.log(commandLoadLog);
+// console.log(commands,"\n",events);
 
 bot.on("ready", () => events.get("ready")!(bot, [eventLoadLog, commandLoadLog]) );
 bot.on("messageCreate", message => events.get("messageCreate")!(bot, message, commands) );

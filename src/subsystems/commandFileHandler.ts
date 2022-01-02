@@ -20,7 +20,6 @@ while(queuedDirectories.length > 0){
     }
     let path: string = "../"+ directory +"/"+ commandName;
     const command = (await import(path)).default as Command;
-    console.log("==\n",path,"\n",command,"\n==");
     commandName = commandName.split(".")[0];
     if(!command.active){
       console.log("== Comando "+ commandName + " lido como desativado, em "+ directory);
