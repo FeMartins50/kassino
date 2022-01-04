@@ -1,7 +1,7 @@
-import { Command } from "../types/Command";
+import { MessageCommand } from "../types/MessageCommand";
 import { readdirSync } from "fs";
 
-const commandsMap: Map<string, Command> = new Map();
+const commandsMap: Map<string, MessageCommand> = new Map();
 
 let commandLoadCheck: string = "=LoadCheck= COMMANDS =";
 let queuedDirectories: string[] = ["messageCommands"];
@@ -19,7 +19,7 @@ while(queuedDirectories.length > 0){
       continue;
     }
     let path: string = "../"+ directory +"/"+ commandName;
-    const command = (await import(path)).default as Command;
+    const command = (await import(path)).default as MessageCommand;
     commandName = commandName.split(".")[0];
     if(!command.active){
       console.log("== Comando "+ commandName + " lido como desativado, em "+ directory);

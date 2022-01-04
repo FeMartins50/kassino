@@ -1,8 +1,8 @@
 import { Client } from "discord.js";
-import { Command } from "./Command";
+import { MessageCommand } from "./MessageCommand";
 
 export interface Bot{
   client: Client;
   events: Map<string, Function>;
-  commands: Map<string, Command>;
+  commands: Map<string, MessageCommand>;
 }

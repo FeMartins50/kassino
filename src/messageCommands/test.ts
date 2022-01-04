@@ -1,5 +1,5 @@
 import { Client, Message } from "discord.js";
-import { Command } from "../types/Command";
+import { MessageCommand } from "../types/MessageCommand";
 
 export default {
   active: true,
@@ -9,4 +9,4 @@ export default {
     console.log("teste");
     message.reply("testado");
   }
-} as Command;
+} as MessageCommand;

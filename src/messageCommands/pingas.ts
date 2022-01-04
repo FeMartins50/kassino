@@ -1,5 +1,5 @@
 import { Client, Message } from "discord.js";
-import { Command } from "../types/Command";
+import { MessageCommand } from "../types/MessageCommand";
 
 export default {
   active: true,
@@ -8,4 +8,4 @@ export default {
   async run(bot: Client, message: Message): Promise<void> {
     message.reply("pong");
   }
-} as Command;
+} as MessageCommand;

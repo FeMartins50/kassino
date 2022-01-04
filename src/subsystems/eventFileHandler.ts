@@ -7,6 +7,7 @@ let eventsDirectory: string[] = readdirSync("./build/events");
 
 while(eventsDirectory.length > 0){
   let event: string = eventsDirectory.shift()!;
+  if(event.startsWith("_")) continue;
   if(!event.endsWith(".js")){
     console.error("Algo no diretório events não é script!");
     continue;

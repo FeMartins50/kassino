@@ -1,4 +1,4 @@
-export interface Command {
+export interface MessageCommand {
   active: boolean;
   callNames: string[];
   run: Function;
