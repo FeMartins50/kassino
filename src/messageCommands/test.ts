@@ -1,12 +1,15 @@
 import { Client, Message } from "discord.js";
-import { MessageCommand } from "../types/MessageCommand";
+import { MessageCommand } from "../types/MessageCommand.js";
+import { MessageCommandProperties } from "../types/MessageCommandProperties.js";
 
-export default {
-  active: true,
+const commandProperties: MessageCommandProperties = {
+  status: true,
   callNames: ["teste", "test"],
 
-  async run(bot: Client, message: Message): Promise<void> {
+  command: async function run(bot: Client, message: Message): Promise<void> {
     console.log("teste");
     message.reply("testado");
   }
-} as MessageCommand;
+};
+
+export const command: MessageCommand = new MessageCommand(commandProperties);

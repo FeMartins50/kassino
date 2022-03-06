@@ -26,13 +26,6 @@ for(let event of events.keys()){
   });
 }
 
-bot.client.on("interactionCreate", interaction => {
-  if(!interaction.isCommand()) return;
-  if(interaction.commandName == "pingas"){
-    interaction.reply("pong");
-  }
-});
-
 try{
   await bot.client.login(token);
 } catch(err){
