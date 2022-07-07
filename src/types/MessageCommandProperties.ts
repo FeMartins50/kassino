@@ -1,5 +1,5 @@
 export interface MessageCommandProperties {
-  status: boolean;
+  isActive: boolean;
   callNames: string[];
   command: Function;
 }

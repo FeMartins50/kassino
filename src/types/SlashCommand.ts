@@ -4,17 +4,17 @@ import { Command } from "./Command.js";
 
 export class SlashCommand extends Command{
   callName: string;
-  global: boolean;
+  isGlobal: boolean;
   guilds: string[];
   options: SlashCommandBuilder;
 
   constructor(properties: SlashCommandProperties){
-    const { status, guilds, options, command } = properties;
-    super(status, command);
+    const { isActive, guilds, isGlobal, options, command } = properties;
+    super(isActive, command);
     this.callName = options.name;
-    this.global = false;
+    this.isGlobal = isGlobal;
     if(guilds.length === 0) {
-      this.global = true;
+      this.isGlobal = true;
     }
     this.guilds = guilds;
     this.options = options;

@@ -3,7 +3,7 @@ import { MessageCommand } from "../types/MessageCommand.js";
 import { MessageCommandProperties } from "../types/MessageCommandProperties.js";
 
 const commandProperties: MessageCommandProperties = {
-  status: true,
+  isActive: true,
   callNames: ["kasino","KASINO","KAAASIINOOOOOOOOOOO"],
 
   command: async function run(bot: Client, message: Message): Promise<void> {

@@ -8,7 +8,7 @@ import { REST } from "@discordjs/rest";
 import { Routes } from "discord-api-types/v9";
 
 const rawConfig = readFileSync("./config.json").toString();
-const { prefix, clientId } = JSON.parse(rawConfig);
+const { clientId } = JSON.parse(rawConfig);
 
 let commandFiles: string[] = readdirSync("./build/interactionCommands");
 
@@ -17,8 +17,8 @@ commandDestination.set("global", []);
 
 let slashCommandLog: string = "SlashCommands atualizados: ";
 for(let file of commandFiles) {
-  const { global, guilds, options } = (await import("./interactionCommands/"+file)).default as SlashCommand;
-  if(global){
+  const { isGlobal, guilds, options } = (await import("./interactionCommands/"+file)).default as SlashCommand;
+  if(isGlobal){
     commandDestination.get("global")!.push(options);
     continue;
   }

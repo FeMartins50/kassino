@@ -1,9 +1,9 @@
 export class Command{
-    active: boolean;
+    isActive: boolean;
     run: Function;
 
     constructor(status: boolean, command: Function) {
-        this.active = status;
+        this.isActive = status;
         this.run = command;
     }
 }

@@ -1,7 +1,7 @@
 {
   "name": "kassino-bot",
   "version": "0.1.0",
-  "description": "Definitive main bot for all 0's purpouses!",
+  "description": "Definitive main bot for all 0's purposes!",
   "main": "bot.js",
   "scripts": {
     "build": "tsc",
@@ -10,9 +10,12 @@
   "dependencies": {
     "@discordjs/builders": "^0.11.0",
     "@discordjs/rest": "^0.2.0-canary.0",
+    "@discordjs/voice": "^0.8.0",
     "discord-api-types": "^0.26.0",
-    "discord.js": "^13.5.0",
-    "dotenv": "^10.0.0"
+    "discord.js": "^13.8.1",
+    "dotenv": "^10.0.0",
+    "ffmpeg-static": "^4.4.1",
+    "libsodium-wrappers": "^0.7.9"
   },
   "devDependencies": {
     "@types/node": "^17.0.5"

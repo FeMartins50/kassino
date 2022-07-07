@@ -43,12 +43,8 @@ while(queuedDirectories.length > 0){
         commandsMap.set(name, command);
         commandLoadCheck += commandName+", ";
       }
-      // instanceof não tá funcionando direito...
-      // tirei o instanceof por enquanto
-      // inicia o bot aí pra tu ver kk
-      console.log(" = " + command);
     }catch(err){
-      console.log("\nERRO AO CARREGAR COMANDO ======\n",err,+"ERRO AO CARREGAR COMANDO ======\n");
+      console.log("\nERRO AO CARREGAR COMANDO ======\n",err,"\nERRO AO CARREGAR COMANDO ======\n");
     }
   }
 }

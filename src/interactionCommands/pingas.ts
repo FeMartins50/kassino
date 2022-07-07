@@ -8,8 +8,9 @@ commandOptions.setName("pingas");
 commandOptions.setDescription("PINGAS! PONG!");
 
 const commandProperties: SlashCommandProperties = {
-  status: true,
+  isActive: true,
   guilds: ["528684880968548367"],
+  isGlobal: false,
   options: commandOptions,
   command: async function run(bot: Client, interaction: CommandInteraction): Promise<void> {
     console.log("Pong!");

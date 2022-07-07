@@ -5,8 +5,8 @@ export class MessageCommand extends Command{
   callNames: string[];
 
   constructor(properties: MessageCommandProperties){
-    const { status, callNames, command } = properties;
-    super(status, command);
+    const { isActive, callNames, command } = properties;
+    super(isActive, command);
     this.callNames = callNames;
   }
 }
