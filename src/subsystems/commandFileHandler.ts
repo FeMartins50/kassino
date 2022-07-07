@@ -1,5 +1,5 @@
-import { MessageCommand } from "../types/MessageCommand.js";
-import { SlashCommand } from "../types/SlashCommand.js";
+import { MsgCommand } from "../types/MsgCommand.js";
+import { SlsCommand } from "../types/SlsCommand.js";
 import { Command } from "../types/Command.js";
 import { readdirSync } from "fs";
 
@@ -31,14 +31,14 @@ while(queuedDirectories.length > 0){
       }
   
       // Verificar o tipo do comando => Distinguir o comando por tipo, dentro do map, a partir da chave
-      if(command instanceof MessageCommand){
+      if(command instanceof MsgCommand){
         for(let name of command.callNames){
           name = "MessageCommand/" + name;
           commandsMap.set(name, command);
         }
         commandLoadCheck += commandName+", ";
       }else
-      if(command instanceof SlashCommand){
+      if(command instanceof SlsCommand){
         let name: string = "SlashCommand/" + command.callName;
         commandsMap.set(name, command);
         commandLoadCheck += commandName+", ";

@@ -3,7 +3,7 @@ const token: string = process.env.TOKEN as string;
 
 import { SlashCommandBuilder } from "@discordjs/builders";
 import { readFileSync, readdirSync } from "fs";
-import { SlashCommand } from "./types/SlashCommand";
+import { SlsCommand } from "./types/SlsCommand";
 import { REST } from "@discordjs/rest";
 import { Routes } from "discord-api-types/v9";
 
@@ -17,8 +17,8 @@ commandDestination.set("global", []);
 let slashCommandLog: string = "SlashCommands atualizados: ";
 
 for(let file of commandFiles) {
-  const { isGlobal, guilds, options } = (await import("./interactionCommands/"+file)).default as SlashCommand;
-  if(isGlobal){
+  const { guilds, options } = (await import("./interactionCommands/"+file)).default as SlsCommand;
+  if(guilds.length == 0){
     commandDestination.get("global")!.push(options);
     continue;
   }

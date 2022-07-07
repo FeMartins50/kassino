@@ -1,7 +1,7 @@
 import { Client, Message } from "discord.js";
-import { MessageCommand } from "../types/MessageCommand.js";
+import { MsgCommand } from "../types/MsgCommand.js";
 
-export const command: MessageCommand = new MessageCommand({
+export const command: MsgCommand = new MsgCommand({
   isActive: true,
   callNames: ["kasino","KASINO","KAAASIINOOOOOOOOOOO"],
 

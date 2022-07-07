@@ -1,6 +1,6 @@
 import { Command } from "./Command.js";
 
-export class MessageCommand extends Command{
+export class MsgCommand extends Command{
   callNames: string[];
 
   constructor( properties: { isActive: boolean, callNames: string[], command: Function } ){
