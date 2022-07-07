@@ -25,7 +25,7 @@ while(queuedDirectories.length > 0){
     try{
       let { command } = (await import(path));
 
-      if(!command.active){
+      if(!command.isActive){
         console.log("== Comando "+ commandName + " lido como desativado, em "+ directory);
         continue;
       }
