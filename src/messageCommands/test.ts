@@ -1,13 +1,7 @@
 import { Client, Message, Guild } from "discord.js";
 import { MessageCommand } from "../types/MessageCommand.js";
-import { MessageCommandProperties } from "../types/MessageCommandProperties.js";
 
-import { 
-  joinVoiceChannel, VoiceConnectionStatus, VoiceConnection, createAudioPlayer,
-  AudioPlayerStatus, AudioPlayer, createAudioResource, AudioResource
-} from "@discordjs/voice";
-
-const commandProperties: MessageCommandProperties = {
+export const command: MessageCommand = new MessageCommand({
   isActive: true,
   callNames: ["teste", "test"],
 
@@ -19,6 +13,4 @@ const commandProperties: MessageCommandProperties = {
     
     console.log("= END TEST =");
   }
-};
-
-export const command: MessageCommand = new MessageCommand(commandProperties);
+});

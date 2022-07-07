@@ -14,8 +14,8 @@ let commandFiles: string[] = readdirSync("./build/interactionCommands");
 
 const commandDestination: Map<string, SlashCommandBuilder[]> = new Map();
 commandDestination.set("global", []);
-
 let slashCommandLog: string = "SlashCommands atualizados: ";
+
 for(let file of commandFiles) {
   const { isGlobal, guilds, options } = (await import("./interactionCommands/"+file)).default as SlashCommand;
   if(isGlobal){
@@ -60,3 +60,5 @@ commandDestination.forEach( async (commandsRaw, id) => {
     console.error(error);
   }
 });
+
+console.log(slashCommandLog);

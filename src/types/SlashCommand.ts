@@ -1,5 +1,4 @@
 import { SlashCommandBuilder } from "@discordjs/builders";
-import { SlashCommandProperties } from "./SlashCommandProperties.js";
 import { Command } from "./Command.js";
 
 export class SlashCommand extends Command{
@@ -8,7 +7,7 @@ export class SlashCommand extends Command{
   guilds: string[];
   options: SlashCommandBuilder;
 
-  constructor(properties: SlashCommandProperties){
+  constructor(properties: {isActive: boolean, guilds: string[], isGlobal: boolean, options: SlashCommandBuilder, command: Function}){
     const { isActive, guilds, isGlobal, options, command } = properties;
     super(isActive, command);
     this.callName = options.name;
