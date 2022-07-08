@@ -7,7 +7,7 @@ const { prefix } = JSON.parse(rawConfig);
 export async function process(bot: Bot, message: Message): Promise<void>{
   if(!message.content.startsWith(prefix)) return;
   let args: string[] = message.content.slice(prefix.length).trim().split(" ");
-  let command: string = "MessageCommand/"+ args[0];
+  let command: string = "MsgCommand/"+ args[0];
   if(!bot.commands.has(command)){
     console.log(" Comando de mensagem inexistente: "+ command);
     message.reply("Comando indisponível!");
@@ -17,7 +17,7 @@ export async function process(bot: Bot, message: Message): Promise<void>{
     bot.commands.get(command)!.run(bot, message);
     console.log(command+" executado.");
   }catch(err){
-    console.error("=ERR= Erro ao executar MessageCommand: "+ command);
+    console.error("=ERR= Erro ao executar MsgCommand: "+ command);
     console.error(err);
   }
 }

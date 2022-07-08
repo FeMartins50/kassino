@@ -4,6 +4,9 @@ const token: string = process.env.TOKEN as string;
 import { Client, Intents } from "discord.js";
 import { Bot } from "./types/Bot.js";
 
+import { log as slashCommandLog } from "./deploy-commands.js";
+//console.log(" === SlsCommands Atualizados!!\n"+slashCommandLog+"\n ===");
+
 import { events } from "./subsystems/eventFileHandler.js";
 import { commands } from "./subsystems/commandFileHandler.js";
 

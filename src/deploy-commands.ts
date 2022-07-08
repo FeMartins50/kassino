@@ -17,7 +17,7 @@ commandDestination.set("global", []);
 let slashCommandLog: string = "SlashCommands atualizados: ";
 
 for(let file of commandFiles) {
-  const { guilds, options } = (await import("./interactionCommands/"+file)).default as SlsCommand;
+  const { guilds, options } = (await import("./interactionCommands/"+file)).command as SlsCommand;
   if(guilds.length == 0){
     commandDestination.get("global")!.push(options);
     continue;
@@ -61,4 +61,4 @@ commandDestination.forEach( async (commandsRaw, id) => {
   }
 });
 
-console.log(slashCommandLog);
+export let log = slashCommandLog;

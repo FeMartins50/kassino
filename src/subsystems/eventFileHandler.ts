@@ -2,7 +2,7 @@ import { readdirSync } from "fs";
 
 const eventsMap: Map<string, Function> = new Map();
 
-let eventLoadCheck: string = "=LoadCheck= EVENTS =\n";
+let eventLoadCheck: string = " === LoadCheck EVENTS =\n";
 let eventsDirectory: string[] = readdirSync("./build/events");
 
 while(eventsDirectory.length > 0){
@@ -18,5 +18,6 @@ while(eventsDirectory.length > 0){
   eventsMap.set(event, process);
 }
 
+eventLoadCheck += "\n ===";
 console.log(eventLoadCheck);
 export const events = eventsMap;

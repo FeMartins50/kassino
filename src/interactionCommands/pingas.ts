@@ -8,7 +8,7 @@ commandOptions.setDescription("PINGAS! PONG!");
 
 export const command = new SlsCommand({
   isActive: true,
-  guilds: ["528684880968548367"],
+  guilds: ["528684880968548367","993916529601159218"],
   options: commandOptions,
   command: async function run(bot: Client, interaction: CommandInteraction): Promise<void> {
     console.log("Pong!");
